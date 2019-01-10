@@ -21,6 +21,7 @@
 	font-size: 16px;
 	font-family: sans-serif;
 	background-image: linear-gradient(var(--color-bg-1),var(--color-bg-2));
+	overflow: hidden;
 }
 /* Formulario */
 .form-register{
@@ -107,7 +108,8 @@
 
 /* body del formulario  */
 .form-register__body{
-
+	display:flex;
+	align-items: flex-start;
 }
 
 /* step */
@@ -115,7 +117,41 @@
 	background-color: white;
 	box-shadow: 5px 5px 5px 2px var(--color-shadow);
 	border-radius: 3px;
+	min-width: 100%;
+	opacity: 0;
+	transition: all .2s linear;
 }
+
+.step.active{
+	opacity: 1;
+}
+
+/* para que se mueva el menu a la izquierda */
+.step.to-left{
+	margin-left: -100%;
+}
+
+/* animación*/
+.step.inactive{
+	animation-name: scale;
+	animation-duration: .2s;
+	animation-direction: alternate;
+	animation-iteration-count: 2;
+}
+
+/* creamos los fotogramas con los keyframe */
+
+@keyframes scale {
+	from{
+		transform: scale(1);
+	}
+	to{
+		transform: scale(1.1);
+	}
+
+}
+/*********************************************/
+
 
 /* header de step */
 	.step__header{
