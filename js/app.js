@@ -3,10 +3,12 @@ let form = document.querySelector('.form-register');
 
 let progressOptions = document.querySelectorAll('.progressbar__option');
 
+//se agrega el evento click a todo el formulario
 form.addEventListener('click',function(e){
 	let element = e.target;
 	let isButtonNext = element.classList.contains('step__button--next');
 	let isButtonBack = element.classList.contains('step__button--back');
+	//si se apretan los botones de siguiente o regresar
 	if(isButtonNext || isButtonBack){
 		//console.log('es boton');
 		//vamos a verificar en que paso nos encontramos
